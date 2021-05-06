@@ -1,0 +1,11 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.32"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3"
+    implementation "com.squareup.okhttp3:okhttp:4.9.0"
+    implementation group: 'commons-net', name: 'commons-net', version: '3.8.0'
+    implementation group: 'com.jcraft', name: 'jsch', version: '0.1.55'
+}
