@@ -20,6 +20,6 @@ detekt {
 
 sonarqube {
     properties {
-        property "sonar.kotlin.detekt.reportPaths", "${project.buildDir}/reports/detekt/detekt-report.xml"
+        property "sonar.kotlin.detekt.reportPaths", "${project.buildDir}/reports/detekt/detekt.xml"
     }
 }
