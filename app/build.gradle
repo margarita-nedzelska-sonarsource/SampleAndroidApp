@@ -1,5 +1,7 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm'
+    id "org.sonarqube" version "3.0"
+    id "io.gitlab.arturbosch.detekt" version "1.17.1"
 }
 
 dependencies {
@@ -8,4 +10,16 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:4.9.0"
     implementation group: 'commons-net', name: 'commons-net', version: '3.8.0'
     implementation group: 'com.jcraft', name: 'jsch', version: '0.1.55'
+}
+
+detekt {
+    buildUponDefaultConfig = true // preconfigure defaults
+    allRules = false // activate all available (even unstable) rules.
+    config = files("$projectDir/config/detekt.yml")
+}
+
+sonarqube {
+    properties {
+        property "sonar.kotlin.detekt.reportPaths", "${project.buildDir}/reports/detekt/detekt-report.xml"
+    }
 }
